@@ -1,0 +1,25 @@
+
+<p>
+	<table class="table">
+		<tr>
+			<td>First Name</td><td><%=@actor.first_name%></td>
+		</tr>
+		<tr>
+			<td>Last Name</td><td><%=@actor.last_name%></td>
+		</tr>
+		<tr>
+			<td>Last Update</td><td><%=@actor.last_update%></td>
+		</tr>
+	</table>
+</p>
+<%= link_to 'Back', actors_path%>
+<h1>Lising of Films</h1>
+<table class="table">
+	<tr>
+		<td>Title</td>
+		<td>Release Year</td>
+		<td>Length</td>
+		<td></td>	
+	</tr>
+	<%= render @actor.films %>
+</table>

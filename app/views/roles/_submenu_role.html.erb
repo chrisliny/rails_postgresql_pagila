@@ -1,0 +1,8 @@
+<ul>
+	<% roles.each do |r| %>
+	<li>
+		<%= link_to_unless_current r.name, r %>
+		<%= render 'submenu_role', roles: r.children if r.children.present? %>
+	</li>
+	<% end %>
+</ul>

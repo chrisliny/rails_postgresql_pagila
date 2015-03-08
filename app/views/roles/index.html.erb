@@ -1,0 +1,7 @@
+<table class="table">
+<tr><td>Role Name</td></tr>
+<% @roles.each do |r| %>
+<tr><td><%= link_to r.name, role_path(r)%></td></tr>
+<% end %>
+</table>
+<%= link_to 'New Role', new_role_path%>

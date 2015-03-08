@@ -1,0 +1,16 @@
+<ul class="nav nav-tabs">
+	<% Role.all.each do |r| %>
+	<li><%= link_to r.name, role_path(r), class: ('active' if r == @role)%></li>
+	<% end %>
+</ul>
+<div class="row">
+	<div class="col-md-4">
+	<%= render 'submenu_role', roles: @role.root.children %>
+	</div>
+	<div class="col-md-8">
+		<table class="table">
+			<tr><td>Role Name</td><td><%=@role.name%></td><td><%= link_to 'edit', edit_role_path%></td></tr>
+		</table>
+		<%= link_to "back", roles_path%>
+	</div>
+</div>

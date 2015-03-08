@@ -1,0 +1,37 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.fields_for :questions do |q| %>
+	  <div class="field">
+	    <%= q.label :content, "Question" %><br>
+	    <%= q.text_area :content %></br>
+	    <%= q.check_box :_destroy%><%= q.label :_destroy, "Remove Question"%>
+	      <%= q.fields_for :answers do |a| %>
+			  <div class="field">
+			    <%= a.label :content, "Answer" %>
+			    <%= a.text_field :content %>
+			    <%= a.hidden_field :_destroy%><%= link_to "Remove Answer", "#", class:"remove_fields"%>
+			  </div>
+		  <% end %>
+  
+	  </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_for @role do |f| %>
+	<%= f.label :name%>
+	<%= f.text_field :name %></br>
+	<%= f.label :parent_id%>
+	<%= f.collection_select :parent_id, Role.all, :id, :name, include_blank: true%></br>
+	<%= f.submit "Create"%>
+<% end %>

@@ -1,0 +1,27 @@
+<p>
+	<table class="table">
+		<tr>
+			<td>Title</td><td><%=@film.title%></td>
+		</tr>
+		<tr>
+			<td>Release Year</td><td><%=@film.release_year%></td>
+		</tr>
+		<tr>
+			<td>Language</td><td><%=@film.language.name%></td>
+		</tr>		
+		<tr>
+			<td>Length</td><td><%=@film.length%></td>
+		</tr>
+	</table>
+</p>
+<%= link_to 'Back', films_path%>
+<h1>Lising of Actors</h1>
+<table class="table">
+	<tr>
+		<td>First Name</td>
+		<td>Last Name</td>
+		<td>Last Update</td>
+		<td></td>	
+	</tr>
+	<%= render @film.actors %>
+</table>

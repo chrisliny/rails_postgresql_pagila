@@ -1,0 +1,11 @@
+<h1>Lising of Films</h1>
+<%= paginate @films %>
+<table class="table">
+	<tr>
+		<td><%= sortable 'Title' %></td>
+		<td><%= sortable 'release_year'%></td>
+		<td><%= sortable 'length'%></td>
+		<td></td>
+	</tr>
+	<%= render @films %>
+</table>
