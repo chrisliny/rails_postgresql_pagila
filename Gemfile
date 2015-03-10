@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'ransack'
 
-gem 'kendoui-rails'
+# gem 'kendoui-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
@@ -31,10 +31,10 @@ gem 'sidekiq'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 gem 'yaml_db'
 
